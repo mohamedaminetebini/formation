@@ -1,0 +1,29 @@
+
+<p-messages severity="success" ></p-messages>
+<div *ngIf="tuto!=undefined && !editMode">
+<h1>Tuto Details </h1>
+  <p>
+    Title :  {{tuto.title}}
+   </p>
+   <p>
+   description :  {{tuto.description}}
+   </p>
+   <p>
+   published :  {{tuto.publishedStatus ===true ? "published" : "pending"}}
+   </p>
+   <button pButton [routerLink]="['/tuto/',tuto.id]">Edit</button>
+</div>
+
+<div *ngIf="tuto!=undefined && editMode" style="flex-direction: column; display: flex;gap: 1rem; align-items: center;" id="editview">
+  <h1>Edit Tuto</h1>
+  <label for="title">Title</label>
+  <input pInputText type="text" [(ngModel)]="tuto.title">
+  <label  for="description">Description</label>
+  <input pInputText type="text" [(ngModel)]="tuto.description">
+  <label for="published">published Status</label>
+  <p-checkbox type="checkbox"  [(ngModel)]="tuto.publishedStatus" [binary]="true" inputId="binary"> </p-checkbox>
+
+  <button pButton (click)="updateTuto()">Update</button>
+</div>
+
+

@@ -1,0 +1,40 @@
+<nav>
+  <img id="logo" src="assets/logo.png" alt="logo"/>
+  <ul>
+      <li><a routerLink="/list">List</a></li>
+      <li><a routerLink="/add">Add</a></li>
+  </ul>
+
+</nav>
+<main>
+<p-messages>
+
+</p-messages>
+<input id="search" (keyup)="searchByTitle($event)" type="text" [(ngModel)]="searchText" placeholder="Search..." />
+  <div id="container" >
+   <div style="flex: 1;justify-content: start;">
+     <h1>Tuto List</h1>
+     <ul>
+
+       <li (click)="setTuto(tuto,i)" *ngFor="let tuto of tutos$ | async; let i = index">
+
+           {{tuto.title}}
+
+       </li>
+     </ul>
+<ng-container *ngIf="tutos$ | async as tutos">
+  <ng-container *ngIf="tutos.length > 0">
+    <button   pButton (click)="deleteTutos()">Delete all Tutos</button>
+  </ng-container>
+</ng-container>
+   </div>
+    <div style="flex: 3">
+      <app-tuto-details *ngIf="currentTuto" [tuto]="currentTuto">
+
+      </app-tuto-details>
+    </div>
+  </div>
+
+
+
+</main>

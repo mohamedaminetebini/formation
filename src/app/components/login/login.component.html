@@ -1,0 +1,10 @@
+
+<main style="display: grid; place-content: center;gap: 1rem;">
+  <label>email</label>
+  <input pInputText  type="email" [(ngModel)]="email">
+  <label>password</label>
+  <input pInputText type="password" [(ngModel)]="password">
+  <p>not registered? <a routerLink="/register">Register</a></p>
+  <button pButton (click)="login()">Login</button>
+    </main>
+

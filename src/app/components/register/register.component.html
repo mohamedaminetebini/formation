@@ -1,0 +1,13 @@
+<nav>
+  <img height="100" width="100" id="logo" src="assets/logo.png" alt="logo"/>
+
+</nav>
+<main style="display: grid; place-content: center;gap: 1rem;">
+  <label>username</label>
+  <input pInputText type="text" [(ngModel)]="username">
+  <label>email</label>
+  <input pInputText type="email" [(ngModel)]="email">
+  <label>password</label>
+  <input pInputText type="password" [(ngModel)]="password">
+  <button pButton (click)="register()">Login</button>
+    </main>

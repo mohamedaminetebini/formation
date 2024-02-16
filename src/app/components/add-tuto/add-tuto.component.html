@@ -1,0 +1,21 @@
+<nav>
+  <img id="logo" src="assets/logo.png" alt="logo"/>
+  <ul>
+      <li><a routerLink="/list">List</a></li>
+      <li><a routerLink="/add">Add</a></li>
+  </ul>
+
+</nav>
+<div style="display: flex;flex-direction: column; align-items: center;gap: 1rem;">
+  <h1>Add Tuto</h1>
+  <p-messages></p-messages>
+  <label for="title">Title</label>
+  <input pInputText type="text" [(ngModel)]="tuto.title">
+  <label for="description">Description</label>
+  <input pInputText type="text" [(ngModel)]="tuto.description">
+  <label for="published">published Status</label>
+  <p-checkbox [(ngModel)]="tuto.publishedStatus" [binary]="true" inputId="binary"></p-checkbox>
+  <button pButton (click)="addTuto()">Add</button>
+
+</div>
+
